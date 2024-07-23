@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.js">
     <style>
         .profile-img {
             width: 150px;
@@ -41,13 +43,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Imagen 1">
+                    <img src="recursos/banner1.png" class="d-block w-100 carousel-image" alt="Imagen 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Imagen 2">
+                    <img src="recursos/banner2.jpg" class="d-block w-100 carousel-image" alt="Imagen 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Imagen 3">
+                    <img src="recursos/banner3.png" class="d-block w-100 carousel-image" alt="Imagen 3">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -60,27 +62,36 @@
             </a>
         </div>
     </div>
+    
 
-    <!-- Tarjetas de Perfil -->
+    <!-- Tarjetas de Perfil -->   
     <div id="perfil" class="container mt-5">
+        <h2>Sobre Nosotros</h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <img src="https://via.placeholder.com/150" class="card-img-top profile-img mx-auto mt-3" alt="Imagen de perfil">
+                    <img src="recursos/myAvatar.png" class="card-img-top profile-img mx-auto mt-3 " alt="Imagen de perfil">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Nombre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <a href="https://www.linkedin.com/in/natalia-euward/" class="btn btn-primary">Ver más</a>
+                        <h5 class="card-title">Natalia</h5>
+                        <p class="card-text"> Analista de Sistemas y finalizando la Licenciatura en Informática. Tengo experiencia como tester manual y analista funcional, roles en los que he aprendido a asegurar la calidad y eficiencia de los sistemas. 
+                            Me apasiona la tecnología y disfruto especialmente del análisis funcional, el testing y el desarrollo web.
+                            Estoy en constante búsqueda de nuevas oportunidades para ampliar mis conocimientos y habilidades en estas áreas.
+                         </p>
+                         <a href="https://www.linkedin.com/in/natalia-euward/" class="btn btn-primary" target="_blank">Ver más</a>
+                       
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <img src="https://via.placeholder.com/150" class="card-img-top profile-img mx-auto mt-3" alt="Imagen de perfil">
+                    <img src="recursos/myAvatar2.png"" class="card-img-top profile-img mx-auto mt-3" alt="Imagen de perfil">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Nombre</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+                        <h5 class="card-title">Joel</h5>
+                        <p class="card-text">Actualmente me encuentro desarrollando de manera freelance encargos de paginas Web.
+                            Mi primera experiencia en el mundo it fue con Delsat, una prestigiosa empresa de tecnología donde desempeñe tareas QA Tester.
+                            Acerca de mi experiencia en el sector; llevo varios años perfeccionando mis habilidades de desarrollo y diseño web, permitiéndome crear aplicaciones más intuitivas y centradas en el usuario.
+                            Soy estudiante de la carrera de desarrollo web de la UNER en donde estamos aprendiendo todo lo relacionado al desarrollo de aplicaciones.</p>
+                            <a href="https://www.linkedin.com/in/joel-chasmann/" class="btn btn-primary" target="_blank">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -90,7 +101,7 @@
     <!-- Formulario de Contacto -->
     <div id="contacto" class="container mt-5 mb-5">
         <h2>Contacto</h2>
-        <form>
+        <form id="contactForm">
             <div class="form-group">
                 <label for="name">Nombre</label>
                 <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
@@ -103,12 +114,47 @@
                 <label for="message">Mensaje</label>
                 <textarea class="form-control" id="message" rows="3" placeholder="Escribe tu mensaje"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+            <button id="envio-form" type="submit" class="btn btn-primary">Enviar</button>
+        </form> 
+        <div id="successMessage" class="alert alert-success mt-3" style="display: none;">
+            Enviado correctamente
+        </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Obtener los valores de los campos del formulario
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            // Validar que los campos no estén vacíos
+            if (!name || !email || !message) {
+                 alert('Por favor, completa todos los campos antes de enviar.');
+        return; // Detener el envío del formulario
+    }
+            // Limpiar los campos del formulario
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+            // Mostrar mensaje de éxito
+            document.getElementById('successMessage').style.display = 'block';
+             // Ocultar el mensaje después de 20 segundos
+             setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 20000);
+        });
+    </script>
 </body>
+<footer>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>© 2021 - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
