@@ -64,16 +64,21 @@
     </div>
     
 
-    <!-- Tarjetas de Perfil -->
+    <!-- Tarjetas de Perfil -->   
     <div id="perfil" class="container mt-5">
+        <h2>Sobre Nosotros</h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="card mb-4">
                     <img src="recursos/myAvatar.png" class="card-img-top profile-img mx-auto mt-3 " alt="Imagen de perfil">
                     <div class="card-body text-center">
                         <h5 class="card-title">Natalia</h5>
-                        <p class="card-text">En la actualidad, desarrollo proyectos web freelance. Mi inicio en la industria IT fue con SINTH, una reconocida empresa de tecnología, donde trabajé como Analista de desarrollo de software. Sobre mi experiencia, llevo varios años perfeccionando mis habilidades en programación y diseño web, lo que me permite crear aplicaciones más eficientes y centradas en el usuario. Soy estudiante de la carrera de desarrollo web en la Universidad Siglo 21, donde estamos aprendiendo diversas tecnologías como HTML5, CSS Flexbox, JavaScript y API de Google Maps.</p>
-                        <a href="https://www.linkedin.com/in/joel-chasmann/" class="btn btn-primary">Ver más</a>
+                        <p class="card-text"> Analista de Sistemas y finalizando la Licenciatura en Informática. Tengo experiencia como tester manual y analista funcional, roles en los que he aprendido a asegurar la calidad y eficiencia de los sistemas. 
+                            Me apasiona la tecnología y disfruto especialmente del análisis funcional, el testing y el desarrollo web.
+                            Estoy en constante búsqueda de nuevas oportunidades para ampliar mis conocimientos y habilidades en estas áreas.
+                         </p>
+                         <a href="https://www.linkedin.com/in/natalia-euward/" class="btn btn-primary" target="_blank">Ver más</a>
+                       
                     </div>
                 </div>
             </div>
@@ -83,10 +88,10 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Joel</h5>
                         <p class="card-text">Actualmente me encuentro desarrollando de manera freelance encargos de paginas Web.
-                            Mi primera experiencia en el mundo it fue con Delsat, una prestigiosa empresa de tecnología donde desempeñe tareas QA Testrer.
+                            Mi primera experiencia en el mundo it fue con Delsat, una prestigiosa empresa de tecnología donde desempeñe tareas QA Tester.
                             Acerca de mi experiencia en el sector; llevo varios años perfeccionando mis habilidades de desarrollo y diseño web, permitiéndome crear aplicaciones más intuitivas y centradas en el usuario.
                             Soy estudiante de la carrera de desarrollo web de la UNER en donde estamos aprendiendo todo lo relacionado al desarrollo de aplicaciones.</p>
-                        <a href="https://www.linkedin.com/in/natalia-euward/" class="btn btn-primary">Ver más</a>
+                            <a href="https://www.linkedin.com/in/joel-chasmann/" class="btn btn-primary" target="_blank">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -96,7 +101,7 @@
     <!-- Formulario de Contacto -->
     <div id="contacto" class="container mt-5 mb-5">
         <h2>Contacto</h2>
-        <form>
+        <form id="contactForm">
             <div class="form-group">
                 <label for="name">Nombre</label>
                 <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
@@ -110,11 +115,46 @@
                 <textarea class="form-control" id="message" rows="3" placeholder="Escribe tu mensaje"></textarea>
             </div>
             <button id="envio-form" type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+        </form> 
+        <div id="successMessage" class="alert alert-success mt-3" style="display: none;">
+            Enviado correctamente
+        </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Obtener los valores de los campos del formulario
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            // Validar que los campos no estén vacíos
+            if (!name || !email || !message) {
+                 alert('Por favor, completa todos los campos antes de enviar.');
+        return; // Detener el envío del formulario
+    }
+            // Limpiar los campos del formulario
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+            // Mostrar mensaje de éxito
+            document.getElementById('successMessage').style.display = 'block';
+             // Ocultar el mensaje después de 20 segundos
+             setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 20000);
+        });
+    </script>
 </body>
+<footer>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>© 2021 - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
